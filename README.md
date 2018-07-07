@@ -7,7 +7,7 @@
     - Tieba\Tieba中文件为爬虫文件，包含scrapy爬虫基本的文件，不做过多介绍
 - 项目配置
     - settings.py 的配置信息，见注释
-```markdown
+```python
 # 开启item存储
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
@@ -15,7 +15,7 @@ ITEM_PIPELINES = {
    'Tieba.pipelines.TiebaPipeline': 300,
 }
 ```
-```markdown
+```python
 # MYSQL数据库连接配置
 MYSQL_HOST = "localhost"
 MYSQL_PORT = 3306
@@ -26,7 +26,7 @@ MYSQL_CHARSET = 'utf8mb4'
 # 表格名称
 MYSQL_TABLE = 'sanhe'
 ```
-```markdown
+```python
 # 爬虫开始链接和总页码数
 # 格式统一为这种结构http://tieba.baidu.com/f?kw=%E9%BE%99%E5%8D%8E&ie=utf-8
 BASE_URL = 'http://tieba.baidu.com/f?kw=%E9%BE%99%E5%8D%8E&ie=utf-8'
@@ -42,7 +42,7 @@ TOTAL_PAGE = 100
 - 数据分析的文件是analysis.py具体可视化方法见代码及注释
 </br>数据的展现形式主要是图表，使用的可视化库是`pyecharts` 
 - 首先来看贴吧人的等级分布吧，等级从1-15级，分析代码如下
-```markdown
+```python
     def bartest(self):
         from pyecharts import Bar
         bar = Bar('等级分布条形图',self.ftitle)
@@ -58,7 +58,7 @@ TOTAL_PAGE = 100
 ![等级条形图](https://github.com/Hopetree/Scrapy-Tieba/blob/master/pic/%E7%AD%89%E7%BA%A7%E5%88%86%E5%B8%83%E6%9D%A1%E5%BD%A2%E5%9B%BE.png)
 - 跟等级对应的是贴吧的头衔（每个吧的头衔名称不一样，龙华吧的有点搞笑）
 </br>具体的可视化代码如下：
-```markdown
+```python
     def pietest(self):
         from pyecharts import Pie
         pie = Pie('头衔分布饼形图',self.ftitle,height=600,title_pos='left')
@@ -77,7 +77,7 @@ TOTAL_PAGE = 100
 </br>这都是题外话，回归主题！
 - 接着，从一个面积折线图来看看贴吧的人主要发帖时间
 </br>代码如下：
-```markdown
+```python
     def linetest(self):
         from pyecharts import Line
         line = Line('发帖时间分布折线图',self.ftitle)
@@ -91,7 +91,7 @@ TOTAL_PAGE = 100
 这个规律在很多的社交平台都是一样的，大家都已经习惯了熬夜。
 - 来看看贴吧的人群性别分布
 </br>实现代码：
-```markdown
+```python
     def sexpietest(self):
         from pyecharts import Pie
         pie = Pie('性别分布饼形图',self.ftitle,height=500)
@@ -104,7 +104,7 @@ TOTAL_PAGE = 100
 - 男多女少，这个倒是一点不意外，如果换做为微博估计就反过来了。
 - 再来看看发帖的来源都是什么平台
 </br>实现代码：
-```markdown
+```python
     def fromtest(self):
         from pyecharts import Pie
         pie = Pie('帖子来源饼形图',self.ftitle,title_pos='center')
@@ -117,7 +117,7 @@ TOTAL_PAGE = 100
 ![头衔饼形图](https://github.com/Hopetree/Scrapy-Tieba/blob/master/pic/%E5%B8%96%E5%AD%90%E6%9D%A5%E6%BA%90%E9%A5%BC%E5%BD%A2%E5%9B%BE.png)
 - 最后，来用一个词云图来看看贴吧中哪些人发帖最多
 </br>实现代码：
-```markdown
+```python
     def wordcloud_1(self,imagename,cloudname,fontname):
         wordlist = self.wordcloud
         coloring = imread(imagename)
