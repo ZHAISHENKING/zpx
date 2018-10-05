@@ -11,12 +11,12 @@ constantly==15.1.0
 coreapi==2.3.3
 coreapi-cli==1.0.9
 coreschema==0.0.4
-cryptography==2.2.2
+cryptography==2.3
 cssselect==1.0.3
 cycler==0.10.0
 defusedxml==0.5.0
 diff-match-patch==20121119
-Django==1.11.12
+Django==1.11.15
 django-admin-bootstrapped==2.5.7
 django-allauth==0.33.0
 django-appconf==1.0.2
