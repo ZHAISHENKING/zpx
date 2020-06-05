@@ -16,7 +16,7 @@ cssselect==1.0.3
 cycler==0.10.0
 defusedxml==0.5.0
 diff-match-patch==20121119
-Django==1.11.15
+Django==1.11.29
 django-admin-bootstrapped==2.5.7
 django-allauth==0.33.0
 django-appconf==1.0.2
