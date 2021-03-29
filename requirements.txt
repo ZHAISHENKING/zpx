@@ -77,7 +77,7 @@ PyDispatcher==2.0.5
 pyecharts==0.5.5
 pyecharts-javascripthon==0.0.6
 pyecharts-jupyter-installer==0.0.3
-Pygments==2.2.0
+Pygments==2.7.4
 PyHamcrest==1.9.0
 PyJWT==1.6.1
 PyMySQL==0.7.11
