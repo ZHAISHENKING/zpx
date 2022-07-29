@@ -92,7 +92,7 @@ redis==2.10.6
 requests==2.18.4
 requests-oauthlib==0.8.0
 scipy==1.1.0
-Scrapy==1.5.0
+Scrapy==2.6.2
 scrapy-redis==0.6.8
 service-identity==17.0.0
 simplejson==3.14.0
